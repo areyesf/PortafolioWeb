@@ -1,0 +1,256 @@
+/*import font*/
+@import url("https://fonts.googleapis.com/css?family=Sen&display=swap");
+
+/*color palette*/
+:root {
+  --color-anti-flash-white: #e8f1f2;
+  --color-yankees-blue: #13293d;
+  --color-charleston-green: #28262c;
+  --color-deep-green-cyan-turquoise: #136f63;
+  --color-bright-cerulean: #1b98e0;
+  --color-urobilin: #eab027;
+}
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/***********************************************/
+/* general styles */
+/***********************************************/
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Sen", sans-serif;
+  box-sizing: border-box;
+}
+h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+p {
+  font-size: 1.2rem;
+}
+a {
+  text-decoration: none;
+  color: var(--color-anti-flash-white);
+  cursor: pointer;
+}
+li {
+  list-style: none;
+}
+
+/***********************************************/
+/* navbar */
+/***********************************************/
+#navbar {
+  background-color: var(--color-deep-green-cyan-turquoise);
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  height: 70px;
+  padding: 0 30px;
+  width: 100%;
+  z-index: 1;
+}
+@media (max-width: 550px) {
+  #navbar {
+    justify-content: center;
+  }
+}
+#navbar ul {
+  display: flex;
+}
+#navbar a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 10px;
+  height: 100%;
+  transition: background-color 1s;
+}
+#navbar a:hover {
+  background: var(--color-charleston-green);
+}
+
+/***********************************************/
+/* welcome section */
+/***********************************************/
+#welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-charleston-green);
+  color: var(--color-anti-flash-white);
+}
+
+#welcome-section article {
+  max-width: 750px;
+  margin: 0 auto;
+}
+@media (max-width: 770px) {
+  #welcome-section article {
+    max-width: 80%;
+  }
+}
+#welcome-section article p {
+  margin-bottom: 1rem;
+  text-align: justify;
+  color: var(--color-urobilin);
+}
+/***********************************************/
+/* proyects */
+/***********************************************/
+#projects {
+  width: 100%;
+  padding: 10px;
+  color: var(--color-anti-flash-white);
+  background-color: var(--color-bright-cerulean);
+  text-align: center;
+}
+#projects h1 {
+  max-width: 750px;
+  margin: 6rem auto 1rem auto;
+  text-align: center;
+  border-bottom: 0.2rem solid var(--color-anti-flash-white);
+}
+.proyects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 4rem;
+  max-width: 1200px;
+  margin: 2rem auto 4rem auto;
+}
+.project-tile {
+  background-color: var(--color-charleston-green);
+  border-radius: 2px;
+}
+.project-tile img {
+  display: block;
+  height: calc(100% - 4rem);
+  width: 100%;
+  object-fit: cover;
+}
+
+.project-tile p {
+  font-size: 0.9rem;
+  padding: 1.5rem 0;
+}
+@media (max-width: 700px) {
+  .project-tile p {
+    font-size: 1.5rem;
+    padding: 1.5rem 0;
+  }
+}
+
+.project-tile .code {
+  color: var(--color-charleston-green);
+  transition: color 0.3s;
+}
+.project-tile:hover .code {
+  color: var(--color-urobilin);
+}
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: 2px;
+  background-color: var(--color-charleston-green);
+  color: var(--color-anti-flash-white);
+  padding: 1rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+/***********************************************/
+/* Contact */
+/***********************************************/
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-emphasis: center;
+  color: var(--color-anti-flash-white);
+  background-color: var(--color-yankees-blue);
+  width: 100%;
+  height: 70vh;
+}
+#contact article {
+  width: 50%;
+}
+@media (max-width: 1200px) {
+  #contact article {
+    width: 80%;
+  }
+}
+
+#contact h1 {
+  margin: 0.5rem 0;
+}
+@media (max-width: 770px) {
+  #contact h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+#contact ul {
+  margin: 2rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 770px) {
+  #contact ul {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+#contact li {
+  font-size: 1.5rem;
+}
+@media (max-width: 770px) {
+  #contact li {
+    margin: 0.7rem 0;
+    font-size: 2rem;
+  }
+}
+
+#contact p {
+  font-style: italic;
+  font-size: 1rem;
+}
+@media (max-width: 770px) {
+  #contact p {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
+#contact i {
+  margin-right: 0.3rem;
+}
+
+/***********************************************/
+/* Footer */
+/***********************************************/
+#footer {
+  border-top: 0.5rem solid var(--color-urobilin);
+  background-color: var(--color-yankees-blue);
+  color: var(--color-anti-flash-white);
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.7rem;
+}
